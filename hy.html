@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            align-items: center;
+            padding-left: 100px;
+            padding-right: initial;
+            background-color: violet;
+        }
+        .container {
+        align-items: center;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        background-color: #f0fc05;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: blue;
+    }
+    input[type="text"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 60px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fe0707;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #01f912;
+    }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number </h1>
+    <p>Guess a number between 1 and 10:</p>
+    <input type="number" id="guessInput">
+    <button onclick="checkGuess()">Guess</button>
+    <div id="output"></div>
+
+    <script>
+        // Generate a random number between 1 and 100
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guessInput').value);
+
+            if (isNaN(guess) || guess < 1 || guess > 10) {
+                showMessage('Please enter a valid number between 1 and 10.');
+                return;
+            }
+
+            attempts++;
+
+            if (guess === randomNumber) {
+                showMessage(`Congratulations! You guessed the number ${randomNumber} in ${attempts} attempts.`);
+            } else if (guess < randomNumber) {
+                showMessage('Too low! Try a higher number.');
+            } else {
+                showMessage('Too high! Try a lower number.');
+            }
+        }
+
+        function showMessage(message) {
+            document.getElementById('output').textContent = message;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:greenyellow;
+}
+
+.container {
+    max-width: 40px;
+    margin: 10 auto;
+    padding: 200px;
+    background-color:greenyellow;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 100px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    margin-top: 10px;
+    text-align: center;
+}
